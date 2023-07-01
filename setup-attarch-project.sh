@@ -29,6 +29,10 @@ python3 ./attarch_scripts/first-time-setup.py
 echo "Moving Simulate.sh..."
 mv ./attarch_scripts/Simulate.sh .
 
+# Move the build_app.sh file to the parent directory
+echo "Moving build_app.sh..."
+mv ./attarch_scripts/build_app.sh .
+
 # Remove the attarch_scripts repository
 echo "Cleaning up..."
 rm -rf ./attarch_scripts
