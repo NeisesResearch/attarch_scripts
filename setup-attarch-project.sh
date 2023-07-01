@@ -2,11 +2,15 @@
 
 set -e
 
-# Step 1: Initialize the repository
+# Clone the git repository
+echo "Cloning the attarch_scripts repository..."
+git clone https://github.com/NeisesResearch/attarch_scripts.git
+
+# Initialize the repository
 echo "Initializing the repository..."
 repo init -u https://github.com/ku-sldg/attarch-manifest.git -b measurement_integration
 
-# Step 2: Sync the repository
+# Sync the repository
 echo "Syncing the repository..."
 repo sync
 
@@ -17,9 +21,17 @@ then
     exit 1
 fi
 
-# Step 3: Run the Python3 script
+# Run the first-time setup script from the attarch_scripts repository
 echo "Running the first-time setup script..."
-python3 ./tools/attarch/first-time-setup.py
+python3 ./attarch_scripts/first-time-setup.py
+
+# Move the Simulate.sh file to the parent directory
+echo "Moving Simulate.sh..."
+mv ./attarch_scripts/Simulate.sh .
+
+# Remove the attarch_scripts repository
+echo "Cleaning up..."
+rm -rf ./attarch_scripts
 
 echo "Script completed successfully."
 
