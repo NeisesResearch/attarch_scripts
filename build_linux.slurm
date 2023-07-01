@@ -20,5 +20,5 @@ version=${versions[$SLURM_ARRAY_TASK_ID]}
 basedir="/panfs/panfs.ittc.ku.edu/scratch/m811n155/"
 
 # Change to the directory where the kernels are and run the build script
-srun /bin/bash -c "cd ${basedir}/dissertation/linux-kernels && singularity exec ${basedir}/camkes_latest.sif python3 ./buildLinux.py ${version}"
+srun /bin/bash -c "cd ${basedir}/dissertation && singularity exec ${basedir}/camkes_latest.sif python3 linux-kernels/buildLinux.py ${version}"
 
