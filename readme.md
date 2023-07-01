@@ -3,7 +3,7 @@
 This repository houses a collection of scripts that manage my dissertation project. To set up a complete development and testing environment for the app (except for the Docker container), invoke the following command:
 
 ```bash
-curl <(bash https://raw.githubusercontent.com/NeisesResearch/attarch_scripts/master/setup-attarch-project.sh)
+bash <(curl https://raw.githubusercontent.com/NeisesResearch/attarch_scripts/master/setup-attarch-project.sh)
 ```
 
 ## Requirements
