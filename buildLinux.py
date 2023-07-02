@@ -13,6 +13,7 @@ def clean_files():
 
 def copy_config_files():
     try:
+        print(os.getcwd())
         subprocess.check_call("cp  ../../projects/camkes-vm-images/qemu-arm-virt/linux_configs/config .config", shell=True)
         subprocess.check_call("cp .config .config.old", shell=True)
     except Exception as e:

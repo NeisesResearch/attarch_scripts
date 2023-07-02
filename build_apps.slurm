@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#SBATCH --job-name=build_kernels
-#SBATCH --output=out/linux_result_%A_%a.txt
+#SBATCH --job-name=build_apps
+#SBATCH --output=out/app_result_%A_%a.txt
 #SBATCH --array=0-6
 #SBATCH --mem=120G
 #SBATCH --cpus-per-task=18
@@ -23,5 +23,5 @@ basedir="/panfs/panfs.ittc.ku.edu/scratch/m811n155/"
 srun echo "I am running on node: $SLURMD_NODENAME"
 
 # Change to the directory where the kernels are and run the build script
-srun /bin/bash -c "cd ${basedir}/dissertation && singularity exec ${basedir}/camkes_latest.sif python3 linux-kernels/buildLinux.py ${version}"
+srun /bin/bash -c "cd ${basedir}/dissertation && singularity exec ${basedir}/camkes_latest.sif ./build_app.sh ${version}"
 
