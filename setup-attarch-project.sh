@@ -29,7 +29,7 @@ python3 ./attarch_scripts/first-time-setup.py
 echo "Moving build scripts..."
 mv ./attarch_scripts/simulate.sh .
 mv ./attarch_scripts/build_app.sh .
-mv ./attarch_scripts/buildLinux.py .
+mv ./attarch_scripts/buildLinux.py ./linux-kernels/
 mv ./attarch_scripts/build_linux.slurm .
 
 # Remove the attarch_scripts repository
