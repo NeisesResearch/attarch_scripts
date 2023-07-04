@@ -36,7 +36,7 @@ def prepare_source():
 
 def compile_kernel():
     try:
-        subprocess.check_call(f"make -j{os.cpu_count()} ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu-", shell=True)
+        subprocess.check_call(f"make -j 10 ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu-", shell=True)
     except Exception as e:
         print(f"Failed to compile the kernel\n{e}")
         exit(1)
