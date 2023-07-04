@@ -31,6 +31,7 @@ mv ./attarch_scripts/simulate_all.slurm .
 mv ./attarch_scripts/build_app.sh .
 mv ./attarch_scripts/buildLinux.py ./linux-kernels/
 mv ./attarch_scripts/build_linux.slurm .
+mv ./attarch_scripts/SetupGitSSH.py ./attarch/
 
 # Remove the attarch_scripts repository
 echo "Cleaning up..."
