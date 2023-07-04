@@ -10,6 +10,10 @@ fi
 # Get the version from the command line argument
 version=$1
 
+# Change to the directory where the kernels are and run the python script
+cd attarch/$version
+python3 ScrapeSystemMap.py >> components/Measurement/configurations/linux_definitions.h
+cd ../..
 rm -rf ./build-$version || { echo 'Failed to delete /host/build-$version'; }
 mkdir ./build-$version || { echo 'Failed to create /host/build-$version'; }
 cd ./build-$version || { echo 'Failed to change to /host/build-$version directory'; exit 1; }
