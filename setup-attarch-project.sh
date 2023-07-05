@@ -14,6 +14,10 @@ repo init -u https://github.com/ku-sldg/attarch-manifest.git -b measurement_inte
 echo "Syncing the repository..."
 repo sync
 
+# Ensure the slurm output directories are available
+mkdir -p out
+mkdir -p results
+
 # Ensure Python3 is installed and available
 if ! command -v python3 &> /dev/null
 then
